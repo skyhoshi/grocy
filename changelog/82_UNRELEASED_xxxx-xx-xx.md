@@ -25,7 +25,7 @@
 
 ### Meal plan
 
-- xxx
+- Fixed that "add recipe"-dropdown wasn't sorted alphabetically
 
 ### Chores
 

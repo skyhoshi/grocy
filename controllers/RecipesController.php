@@ -29,7 +29,7 @@ class RecipesController extends BaseController
 
 		$mealPlanWhereTimespan = "day BETWEEN DATE('$start', '-$days days') AND DATE('$start', '+$days days')";
 
-		$recipes = $this->DB->recipes()->where('type', RecipesService::RECIPE_TYPE_NORMAL)->fetchAll();
+		$recipes = $this->DB->recipes()->where('type', RecipesService::RECIPE_TYPE_NORMAL)->orderBy('name', 'COLLATE NOCASE')->fetchAll();
 		$events = [];
 		foreach ($this->DB->meal_plan()->where($mealPlanWhereTimespan) as $mealPlanEntry)
 		{
